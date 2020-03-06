@@ -1,8 +1,28 @@
-let answers = ['Paris', '8', 'Ijsselmeer'];
+var answers = [
+    "Paris",
+    '8',
+    "Ijsselmeer"
+];
+var answerCar = [
+    "Volkswagen", 
+    "Audi", 
+    "Opel", 
+    "Porsche", 
+    "BMW", 
+    "Mercedes", 
+    "Mercedes-Benz"
+];
+var answerIsland = [
+    "Texel", 
+    "Vlieland", 
+    "Terschelling", 
+    "Ameland", 
+    "Schiermonnikoog"
+];
 
 function checkIt(){
     var correct = 0;
-
+    
     /*question 1*/
     var input1 = document.getElementById("answer1").value;
     if (input1 == answers[0]){
@@ -36,7 +56,29 @@ function checkIt(){
         document.getElementById("answer3").style.background = "red";
     }   
 
-    if (correct == 3){
+        /*question 4*/
+    var input4 = document.getElementById("answer4").value;
+    if (answerCar.includes(input4)){
+        document.getElementById("answer4")
+        correct +=1;
+        document.getElementById("answer4").style.background = "green";
+    }   else {
+        document.getElementById("answer4")
+        document.getElementById("answer4").style.background = "red";
+    } 
+
+    /*question 5*/
+    var input5 = document.getElementById("answer5").value;
+    if (answerIsland.includes(input5)){
+        document.getElementById("answer5")
+        correct +=1;
+        document.getElementById("answer5").style.background = "green";
+    }   else {
+        document.getElementById("answer5")
+        document.getElementById("answer5").style.background = "red";
+    } 
+
+    if (correct == 5){
         document.getElementById("points").innerText = "All answers are correct!";
     } else {
         document.getElementById("points").innerText = "Try again";
